@@ -27,32 +27,32 @@
       <img src="setting/static/img/hi1.jpg" width="120" height="150" alt="spring"><br><br>
       <b>박혜영 (spring)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
-      <sub><b>Frontend / UI / 게시판</b></sub><br>
-      <sub>공지사항 게시판 제작, 헤더/푸터 컴포넌트 구성,<br>게시물 정렬 및 jQuery UI 구현</sub><br><br>
+      <sub><b>Frontend / Backend</b></sub><br>
+      <sub>마이페이지 구현<br>머니페이지 구현</sub><br><br>
       <a href="https://github.com/gangazigood"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
       <img src="setting/static/img/hi2.jpg" width="120" height="150" alt="summer"><br><br>
       <b>백기림 (summer)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
-      <sub><b>인증 / 배포 / DevOps</b></sub><br>
-      <sub>회원가입 및 로그인 로직 구현,<br>이메일 구독, AWS EC2 + Gunicorn 배포 환경 구축</sub><br><br>
+      <sub><b>Frontend / Backend</b></sub><br>
+      <sub>DB구현<br>총괄</sub><br><br>
       <a href="https://github.com/girintr"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
       <img src="setting/static/img/hi3.jpg" width="120" height="150" alt="autumn"><br><br>
       <b>이윤서 (autumn)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
-      <sub><b>게시판 / 보안 / UI</b></sub><br>
-      <sub>게시판 CRUD 로직, 파일 암호화 처리,<br>Bootstrap 기반 인터페이스 개선</sub><br><br>
+      <sub><b>Frontend / Backend</b></sub><br>
+      <sub>hreder/footer등 base.html구현<br>매니저 페이지 구현현</sub><br><br>
       <a href="https://github.com/yoo05-seo"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
-      <img src="setting/static/img/hi4.jpg" width="120" height="150" alt="winter"><br><br>
+      <img src="setting/static/img/hi4.jpg" width="120" height="150px" alt="winter"><br><br>
       <b>박종훈 (winter)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
-      <sub><b>핵심 비즈니스 로직 / DB 설계</b></sub><br>
-      <sub>풋살 경기 예약 및 취소 관리,<br>Flatpickr 달력 기반 경기 조회,<br>DB 모델링 및 Flask Blueprint 설계</sub><br><br>
+      <sub><b>Frontend / Backend</b></sub><br>
+      <sub>Matches페이지 구현<>Flatpickr 달력 기반 경기 조회<br>stadium 페이지 구현br</sub><br><br>
       <a href="https://github.com/dailyhune"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
   </tr>
@@ -63,11 +63,19 @@
 ---
 
 ## ⚙️ 기술 스택 및 도구
-**Front-end:** HTML5, CSS3, Bootstrap5, jQuery, Flatpickr.js  
+**Front-end:**  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/>
+<img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/><br>
 **Back-end:** Python (Flask)  
-**DB:** SQLAlchemy  
+**DB:**  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 **Cloud:** AWS, Docker  
 **ETC:** Git, GitHub, Figma  
+<br>
+
+<br>
+
 
 ---
 
@@ -88,21 +96,45 @@
 ---
 
 ## 🧱 프로젝트 설계, 구현
-> PPT나 ERD, 플로우차트 이미지 등을 여기에 삽입할 예정  
+<details><summary>PPT</summary>
+
+
+</details>  
 
 ---
 
 ## 📸 주요기능 실행 화면
 
 ### 회원가입/로그인
-나의 정보를 입력하여 회원가입을 하거나 로그인 할 수 있습니다
+
+<details>
+  <summary>나의 정보를 입력하여 회원가입을 하거나 로그인 할 수 있습니다</summary>
+  
+
+</details>
+
+### 경기신청하기
+
+<details>
+  <summary>만들어 있는 경기를 신청할 수 있습니다.</summary>
+
+
+</details>
 
 ### 내 경기 내역  
-예약 페이지에서는 나의 예약 정보를 ‘신청한 경기’와 ‘끝난 경기’로 구분하여 확인할 수 있습니다.  
-‘예약한 경기’는 결제 취소 버튼을 통해 예약을 취소할 수 있고, ‘끝난 경기’는 자동으로 삭제됩니다.  
+<details>
+  <summary>예약 페이지에서는 나의 예약 정보를 ‘신청한 경기’와 ‘끝난 경기’로 구분하여 확인할 수 있습니다.  
+‘예약한 경기’는 결제 취소 버튼을 통해 예약을 취소할 수 있고, ‘끝난 경기’는 자동으로 삭제됩니다.  </summary>
+
+
+</details>
 
 ### 금액 충전/환불
-마이페이지에서 충전하기를 누르면 금액을 충전하거나 환불할 수 있습니다
+
+<details><summary>마이페이지에서 충전하기를 누르면 금액을 충전하거나 환불할 수 있습니다</summary>
+
+
+</details>
 
 
 ---
