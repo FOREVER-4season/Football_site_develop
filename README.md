@@ -62,19 +62,17 @@
 
 ---
 
-## ⚙️ 기술 스택 및 도구
-**Front-end:**  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
-<img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/>
-<img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/><br>
-**Back-end:** Python (Flask) 
-**DB:**  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
-**Cloud:** AWS, Docker  
-**ETC:** Git, GitHub, Figma  
-<br>
 
-<br>
+## ⚙️ 기술 스택 및 도구
+
+| 영역 | 기술 스택 |
+| --- | --- |
+| Front-end | <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/> |
+| Back-end | <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/> |
+| Database | <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> |
+| Cloud | <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/> |
+| Others | <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/> |
+
 
 ---
 
@@ -122,8 +120,9 @@
 <details>
   <summary>나의 정보를 입력하여 회원가입을 하거나 로그인 할 수 있습니다</summary>
   <br>
+  <video controls width="720">
+  <source src="readme_img/attachment.mp4" type="video/mp4">
   
-  https://github.com/FOREVER-4season/Football_site_develop/issues/1#issue-3513775022
   
 ### [Code](#)
 </details>
@@ -132,7 +131,9 @@
 
 <details>
   <summary>만들어 있는 경기를 신청할 수 있습니다.</summary>
-<video src="readme_img/경기신청.mp4">
+  <br>
+  <video controls width="720">
+  <source src="readme_img/user_match.mp4" type="video/mp4">
 
 </video>
 
