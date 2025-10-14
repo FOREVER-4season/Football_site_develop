@@ -68,7 +68,7 @@
 <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/>
 <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/><br>
-**Back-end:** Python (Flask)  
+**Back-end:** Python (Flask) 
 **DB:**  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 **Cloud:** AWS, Docker  
 **ETC:** Git, GitHub, Figma  
@@ -76,6 +76,18 @@
 
 <br>
 
+---
+
+## ⚙️ 다이어그램
+
+<details><summary><b>Class Diagram</b></summary>
+<img src="readme_img/diagram1.png"/>
+</details>
+
+
+<details><summary>Entity Realationship Diagram</summary>
+<img src="readme_img/diagram2.png"/>
+</details>
 
 ---
 
@@ -117,7 +129,9 @@
 
 <details>
   <summary>만들어 있는 경기를 신청할 수 있습니다.</summary>
+<video src="readme_img/경기신청.mp4">
 
+</video>
 
 </details>
 
