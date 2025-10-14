@@ -38,9 +38,13 @@
 
 /* SNS 아이콘 */
 .foot-icon {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
+    padding: 0;        /* ← 추가 */
+    margin: 0;         /* ← 추가 */
+    list-style: none;  /* ← 추가 */
 }
+
 .foot-icon-btn {
   display: inline-flex;
   align-items: center;
