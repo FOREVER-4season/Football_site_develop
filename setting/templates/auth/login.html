@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-wrap mt-4" style="max-width:1100px; margin: 0 auto">
+  <div class="login-left">
+    <h1 class="login-title">로그인</h1>
+
+    <form method="post" class="login-form">
+      {{ form.csrf_token }}
+
+
+      <div class="field">
+        <label for="username">사용자 이름</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          value="{{ form.username.data or '' }}"
+        >
+         {% set errors = form.username.errors %}
+          {% include 'form_errors.html' %}
+      </div>
+
+      <div class="field">
+        <label for="password">비밀번호</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value="{{ form.password.data or '' }}"
+        >
+          {% set errors = form.password.errors %}
+          {% include 'form_errors.html' %}
+      </div>
+
+      <button type="submit" class="btn-login">로그인</button>
+    </form>
+  </div>
+
+  <div class="login-right">
+    <div class="cat">
+      <img
+        src="{{ url_for('static', filename='img/logincat.png') }}"
+        alt="cat"
+        loading="lazy"
+      >
+      <div class="bubble">안 볼게!</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

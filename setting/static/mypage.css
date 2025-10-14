@@ -1,0 +1,141 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Pretendard, sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 30px auto;
+  gap: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 280px;
+  background: #f9fafc;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+/* 프로필 영역 */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.profile-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.email { font-size: 14px; color: #555; margin-bottom: 0; }
+.phone { font-size: 14px; color: #555; }
+
+/* 프로필 보기 버튼 */
+.profile-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #eef3ff;
+  color: #2458ff;
+  border: 1px solid #d8e2ff;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .15s, transform .05s;
+}
+.profile-btn:hover { background: #e4ecff; }
+.profile-btn:active { transform: translateY(1px); }
+
+/* 상태 박스 */
+.status { display: flex; justify-content: space-between; margin: 20px 0; }
+.status-item {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+.status-item span { color: #666; font-size: 12px; }
+
+/* 캐시 */
+.balance {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.balance p { font-size: 13px; color: #666; }
+.balance h3 { font-size: 20px; margin: 10px 0; }
+.charge-btn {
+  background: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 가이드 */
+.guide {
+  background: #e9f5ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+  position: relative;
+}
+.guide strong { display: block; margin-top: 6px; font-size: 15px; }
+.level-circle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #22c55e;
+  color: #fff;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main */
+.main { flex: 1; }
+.main h2 { font-size: 22px; margin-bottom: 20px; }
+.menu { list-style: none; }
+.menu li {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+.menu li i { font-size: 18px; margin-right: 12px; color: #444; }
+.menu li small { font-size: 12px; color: #22c55e; margin-left: 6px; }
+.new {
+  background: #16a34a;
+  color: #fff;
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+/* 하단 고양이 이미지 */
+.bottom-kitty{ display:flex; justify-content:center; padding:8px 0 48px; }
+.bottom-kitty img{ width:clamp(180px,28vw,360px); height:auto; object-fit:contain; }

@@ -1,0 +1,135 @@
+/* ===== foorter 컨테이너 ===== */
+.footer-main {
+  background: #23272b; /* 이미지처럼 진한 회색 */
+  color: #cfd3d8;
+}
+.foot-div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 16px 48px;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* 로고 */
+.foot-logo {
+  height: 32px;
+  width: auto;
+  filter: brightness(1.2); /* 어두운 배경에서 또렷하게 */
+}
+
+/* 상단 링크 */
+.foot-d1-d2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.foot-d1-d2 a {
+  color: #e2e6ea;
+  text-decoration: none;
+}
+.foot-d1-d2 a:hover { text-decoration: underline; }
+.foot-d1-d2 .sep { opacity: .4; margin: 0 4px; }
+
+/* SNS 아이콘 */
+.foot-icon {
+  display: flex;
+  gap: 10px;
+}
+.foot-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #2d3237;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  transition: transform .15s ease, background .15s ease;
+}
+.foot-icon-btn svg { fill: #cfd3d8; }
+.foot-icon-btn:hover {
+  background: #384047;
+  transform: translateY(-1px);
+}
+
+/* 회사 정보 */
+.foot-d1-d4 p,
+.foot-d1-d5 p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #b9c0c6;
+  margin: 0;
+}
+.foot-d1-d5 { margin-top: 6px; }
+.foot-d1-d5 .copy { margin-top: 12px; opacity: .8; }
+
+/* 반응형: 넓은 화면에서 좌우 정렬 */
+@media (min-width: 900px) {
+  .footer-content {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo logo"
+      "links links"
+      "sns  sns"
+      "info info"
+      "biz  biz";
+  }
+  .foot-d1-d1 { grid-area: logo; }
+  .foot-d1-d2 { grid-area: links; justify-content: flex-start; }
+  .foot-d1-d3 { grid-area: sns; }
+  .foot-d1-d4 { grid-area: info; }
+  .foot-d1-d5 { grid-area: biz; }
+}
+
+/* 우하단 챗 버튼 */
+.chat-fab {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  width: 56px; height: 56px;
+  border: 0; border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.chat-face { font-size: 22px; }
+.chat-dot {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 10px; height: 10px;
+  background: #ff5a5f; border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(255,90,95,.6);
+  animation: ping 1.6s infinite;
+}
+@keyframes ping {
+  0%   { box-shadow: 0 0 0 0 rgba(255,90,95,.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(255,90,95,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,90,95,0); }
+}
+
+/* ===== 검색창 히든박스 토글 (이미 쓰신 JS와 매칭) ===== */
+#h-d1-s { position: relative; }
+.hidden_search {
+  position: absolute;
+  top: 44px; left: 0;
+  width: 320px; max-width: 85vw;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  padding: 14px;
+  display: none;
+  z-index: 100;
+}
+.hidden_search.clicked { display: block; }
+.hidden_s1 { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.hidden_s1 span { font-weight: 600; font-size: 14px; }
+.hidden_button {
+  padding: 6px 10px; border-radius: 6px;
+  background: #f3f4f6; border: 1px solid #e5e7eb; cursor: pointer;
+}
+.hidden_s2 { color: #6b7280; font-size: 13px; }

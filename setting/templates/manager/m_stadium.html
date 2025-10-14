@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='m_stadium.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="add_stadium">
+        <div>
+            <h2>등록</h2>
+
+            <form method="post" class="manager_form">
+
+
+                <div class="field">
+                    <label for="name">구장명</label>
+                    <input type="text" name="name" id="name" value="{{ form.name.data or '' }}">
+                </div>
+
+                <div class="field">
+                    <label for="location">지역</label>
+                    <input type="text" name="location" id="location" value="{{ form.location.data or '' }}">
+
+                </div>
+
+
+                <div class="box1">
+                    <label for="headcount">인원</label>
+                    {{ form.headcount() }}
+                </div>
+
+
+                <div class="box1">
+                    <label for="entry_fee">금액</label>
+
+                    {{ form.entry_fee() }}
+
+                </div>
+
+                <button type="submit" class="btn-add">등록</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

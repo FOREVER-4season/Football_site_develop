@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wallet-wrap">
+  <div id="balance" class="balance">현재 잔액: {{ formatted_money }}원</div>
+
+  <div class="panes">
+    <!-- 충전 -->
+    <div class="pane">
+      <img src="{{ url_for('static', filename='img/mcat.png') }}" alt="cat" class="cat1">
+      <div class="cattalk">입금하실거냥?</div>
+
+      <div class="amount-box">
+        <input id="amount" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="금액 입력"><span>원</span>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" id="agree"> [필수] 결제 서비스 이용 약관, 개인정보 처리 동의
+      </label>
+
+      <div class="btn-wrap">
+        <button id="chargeBtn" class="btn-primary1" disabled>충전하기</button>
+      </div>
+    </div>
+
+    <!-- 환불 -->
+    <div class="pane">
+      <img src="{{ url_for('static', filename='img/refundcat.png') }}" alt="cat" class="cat2">
+      <div class="cattalk">환불하실거냥?</div>
+
+      <div class="amount-box">
+        <input id="refundAmount" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="금액 입력"><span>원</span>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" id="agreeRefund"> [필수] 환불 약관 동의, 개인정보 처리 동의
+      </label>
+
+      <div class="btn-wrap">
+        <button id="refundBtn" class="btn-primary1" disabled>환불하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const balanceEl = document.getElementById('balance');
+
+  // 입력 포맷 공통
+  function digitsOnly(s){ return (s||'').replace(/[^\d]/g,''); }
+  function fmt(n){ return n ? Number(n).toLocaleString() : ''; }
+  function normalize(el){
+    const start = el.selectionStart;
+    const raw = digitsOnly(el.value);
+    el.value = fmt(raw);
+    // 커서 보정(간단 버전)
+    el.setSelectionRange(el.value.length, el.value.length);
+    return raw;
+  }
+  function getInt(el){ return parseInt(digitsOnly(el.value||'')||'0',10); }
+
+  // --- 충전 ---
+  const amountEl = document.getElementById('amount');
+  const agreeEl  = document.getElementById('agree');
+  const chargeBtn= document.getElementById('chargeBtn');
+
+  function validateCharge(){
+    const v = getInt(amountEl);
+    chargeBtn.disabled = !(agreeEl.checked && v && v >= 100);
+  }
+  amountEl.addEventListener('input', () => { normalize(amountEl); validateCharge(); });
+  agreeEl.addEventListener('change', validateCharge);
+
+  chargeBtn.addEventListener('click', async () => {
+    const amount = getInt(amountEl);
+    const res = await fetch('{{ url_for("money.fake_pay") }}', {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json',
+        'X-CSRFToken':'{{ csrf_token() if csrf_token else "" }}'
+      },
+      body: JSON.stringify({ amount })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) return alert(data.msg || '충전 실패');
+
+    alert(`+${amount.toLocaleString()}원 충전 완료`);
+    balanceEl.textContent = `현재 잔액: ${data.formatted_money}원`;
+    amountEl.value = ''; agreeEl.checked = false; validateCharge();
+  });
+
+  // --- 환불 ---
+  const refundEl   = document.getElementById('refundAmount');
+  const agreeRefEl = document.getElementById('agreeRefund');
+  const refundBtn  = document.getElementById('refundBtn');
+
+  function validateRefund(){
+    const v = getInt(refundEl);
+    refundBtn.disabled = !(agreeRefEl.checked && v && v >= 100);
+  }
+  refundEl.addEventListener('input', () => { normalize(refundEl); validateRefund(); });
+  agreeRefEl.addEventListener('change', validateRefund);
+
+  refundBtn.addEventListener('click', async () => {
+    const amount = getInt(refundEl);
+    const res = await fetch('{{ url_for("money.refund") }}', {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json',
+        'X-CSRFToken':'{{ csrf_token() if csrf_token else "" }}'
+      },
+      body: JSON.stringify({ amount })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) return alert(data.msg || '환불 실패');
+
+    alert(`-${amount.toLocaleString()}원 환불 완료`);
+    balanceEl.textContent = `현재 잔액: ${data.formatted_money}원`;
+    refundEl.value = ''; agreeRefEl.checked = false; validateRefund();
+  });
+
+  // --- 잔액 불러오기 ---
+  async function loadBalance(){
+    try{
+      const res = await fetch('{{ url_for("money.balance") }}');
+      const data = await res.json();
+      if(res.ok && data.ok){
+        balanceEl.textContent = `현재 잔액: ${data.formatted_money}원`;
+      }
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    // 처음 로드시도 포맷 유지
+    if (amountEl) normalize(amountEl);
+    if (refundEl) normalize(refundEl);
+    loadBalance();
+  });
+</script>
+
+{% endblock %}

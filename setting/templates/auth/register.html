@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- 문서 인코딩 -->
+    <meta charset="utf-8">
+
+    <!-- 반응형 웹 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+
+    <!--    register css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+    <!-- 페이지 제목 -->
+    <title>football</title>
+</head>
+<body>
+
+<div class="signup-wrap">
+    <div class="signup-left">
+        <h1 class="signup-title">회원가입</h1>
+
+        <form method="post" class="signup-form">
+            {{ form.csrf_token }}
+
+            <div class="field">
+                <label for="username">닉네임</label>
+                <input type="text" id="username" name="username"
+                       placeholder="닉네임을 입력하세요"
+                       value="{{ form.username.data or '' }}">
+                {% set errors = form.username.errors %}
+                {% include 'form_errors.html' %}
+                <!--flash오류-->
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="field">
+                <label for="password1">비밀번호</label>
+                <input type="password" id="password1" name="password1"
+                       placeholder="비밀번호를 입력하세요"
+                       value="{{ form.password1.data or '' }}">
+                {% set errors = form.password1.errors %}
+                {% include 'form_errors.html' %}
+            </div>
+
+            <div class="field">
+                <label for="password2">비밀번호 확인</label>
+                <input type="password" id="password2" name="password2"
+                       placeholder="비밀번호를 한번 더 입력하세요"
+                       value="{{ form.password2.data or '' }}">
+                {% set errors = form.password2.errors %}
+                {% include 'form_errors.html' %}
+            </div>
+
+            <div class="field">
+                <label for="email">이메일</label>
+                <input type="text" id="email" name="email"
+                       placeholder="이메일을 입력하세요"
+                       value="{{ form.email.data or '' }}">
+                {% set errors = form.email.errors %}
+                {% include 'form_errors.html' %}
+            </div>
+
+            <div class="field">
+                <label for="phone_number">휴대폰 번호</label>
+                <input type="text" id="phone_number" name="phone_number"
+                       placeholder="휴대폰 번호를 입력하세요"
+                       value="{{ form.phone_number.data or '' }}">
+                {% set errors = form.phone_number.errors %}
+                {% include 'form_errors.html' %}
+            </div>
+
+            <div class="field">
+                <label>생년월일</label>
+                <div class="dob">
+                    <div class="dob-item">{{ form.birth_year(class="form-select") }}</div>
+                    <div class="dob-item">{{ form.birth_month(class="form-select") }}</div>
+                    <div class="dob-item">{{ form.birth_day(class="form-select") }}</div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>성별</label>
+                <div class="gender-select">
+                    {% for gender in form.gender %}
+                        <label class="gender-card {% if gender.checked %}selected{% endif %}">
+                            {{ gender }}
+                            <span>{{ gender.label.text }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="agreements">
+                <label>{{ form.agree_all() }} 전체 동의</label>
+                <label>{{ form.agree_age() }} 만 16세 이상입니다 (필수)</label>
+                <label>{{ form.agree_personal() }} 개인정보 수집 및 이용 동의 (필수)</label>
+                <label>{{ form.agree_terms() }} 이용약관 동의 (필수)</label>
+                <label>{{ form.agree_marketing() }} 개인정보 마케팅 동의 (선택)</label>
+                <label>{{ form.agree_event() }} 이벤트 및 맞춤 정보 문자 수신 (선택)</label>
+            </div>
+
+            <button type="submit" class="btn-signup">가입하기</button>
+        </form>
+    </div>
+
+    <div class="signup-right">
+        <div class="registercat">
+            <img src="{{ url_for('static', filename='img/logincat.png') }}" alt="rcat" loading="lazy">
+            <div class="bubble">안 볼게!!</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 전체 동의 체크박스 ID들 (WTForms가 id를 필드명으로 렌더함)
+    const ids = {
+        all: 'agree_all',
+        children: ['agree_age', 'agree_personal', 'agree_terms', 'agree_marketing', 'agree_event']
+    };
+
+    const $all = document.getElementById(ids.all);
+    const $children = ids.children.map(id => document.getElementById(id)).filter(Boolean);
+
+    if ($all && $children.length) {
+        // 마스터 → 자식
+        $all.addEventListener('change', () => {
+            $children.forEach(cb => {
+                cb.checked = $all.checked;
+            });
+        });
+        // 자식 → 마스터
+        $children.forEach(cb => {
+            cb.addEventListener('change', () => {
+                $all.checked = $children.every(x => x.checked);
+            });
+        });
+    }
+</script>
+</body>

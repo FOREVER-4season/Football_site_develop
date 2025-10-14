@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {#✅메이배너 슬라이더 작성#}
+    <section class="main">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/static/img/banner1.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/banner2.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/banner3.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/banner4.png" alt=""></div>
+                <div class="swiper-slide"><img src="/static/img/banner5.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    {#✅가운데 아이콘 목록#}
+    <section class="section-icon">
+        <div class="s3-bm">
+            <ul class="s3-bm-ul">
+                <li class="s3-bm-ul-li">
+                    <a href="#" class="s3-bm-ul-li-a">
+                        <div class="s3-bm-ul-li-a-div">
+                            <img class="s3-bm-ul-li-a-div-img"
+                                 src="https://d31wz4d3hgve8q.cloudfront.net/media/menu/all.svg" alt="">
+                        </div>
+                        <span class="s3-bm-ul-li-a-span">전체 메뉴</span>
+                    </a>
+                </li>
+                <li class="s3-bm-ul-li">
+                    <a href="{{ url_for('stadium.get_matches') }}" class="s3-bm-ul-li-a">
+                        <div class="s3-bm-ul-li-a-div">
+                            <img class="s3-bm-ul-li-a-div-img"
+                                 src="https://d31wz4d3hgve8q.cloudfront.net/media/menu/soccer.svg" alt="">
+                        </div>
+                        <span class="s3-bm-ul-li-a-span">축구 매치</span>
+                    </a>
+                </li>
+                <li class="s3-bm-ul-li">
+                    <a href="" class="s3-bm-ul-li-a">
+                        <div class="s3-bm-ul-li-a-div">
+                            <img class="s3-bm-ul-li-a-div-img"
+                                 src="https://d31wz4d3hgve8q.cloudfront.net/media/menu/favorite.svg" alt="">
+                        </div>
+                        <span class="s3-bm-ul-li-a-span">찜한 매치</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+
+    {#✅ 오늘 기준 캘린더#}
+    {# 월화수목금을 오늘 기준으로 나열할수 있도록 자바스크립트 사용#}
+    <div class="calendar-container my-4"
+         style="margin:0 auto; display:flex; max-width: 1000px; justify-content:space-around; align-items:center; gap:15px;">
+        <button onclick="prevDay()">&#10094;</button>
+        <div id="calendarList" style="display:flex; flex: 1; justify-content: space-evenly; padding:0; margin:0;"></div>
+        <button onclick="nextDay()">&#10095;</button>
+    </div>
+
+
+    {#✅경기장 목록 자바스크립트로 받기 #}
+    <section class="section-matches container my-3 ">
+        <div id="matchListContainer" style="width: 100%">
+            <p class="text-center text-muted">경기 목록을 불러오는 중입니다...</p>
+        </div>
+    </section>
+
+
+    {#✅자바스크립트 목록#}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script> const isLoggedIn = {{ 'true' if g.user else 'false' }}; </script>
+    <script src="{{ url_for('static', filename='main_stadium.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,166 @@
+/* 레이아웃 */
+.signup-wrap{
+  max-width: 1200px;
+  margin: 48px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.signup-left{ width: 560px; }
+.signup-title{ font-size: 42px; font-weight: 700; margin: 6px 0 28px; }
+
+/* 폼 공통 */
+.signup-form .field{ margin-bottom: 18px; }
+.signup-form label{ display:block; font-size:15px; margin-bottom:8px; }
+
+.signup-form input[type="text"],
+.signup-form input[type="password"]{
+  width: 100%;
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid #b9b9b9;
+  border-radius: 28px;
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow .15s, border-color .15s;
+}
+.signup-form input:focus{
+  border-color:#6f8cff;
+  box-shadow:0 0 0 3px rgba(111,140,255,.25);
+}
+
+/* 생년월일: 가로로 넓게 */
+.dob{ display:flex; gap:12px; }
+.dob-item{ flex:1; min-width:140px; }
+.dob .form-select{
+  width:100%;
+  height:48px;
+  border-radius:28px;
+  padding:0 14px;
+}
+
+/* 성별 선택: 2개 카드 가로로 */
+.gender-select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* 카드 공통 */
+.gender-card {
+  display: flex;
+  align-items: center;       /* 세로 중앙 */
+  justify-content: center;   /* 가로 중앙 */
+  height: 56px;
+  border: 2px solid #d0d0d0;
+  border-radius: 20px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: border-color .15s, background-color .15s, color .15s;
+  position: relative;        /* 내부 input 숨기기 위해 */
+  overflow: hidden;
+}
+
+/* input은 숨기고 레이아웃 차지 X */
+.gender-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* span은 텍스트 전용 중앙 */
+.gender-card span {
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;   /* 클릭해도 체크는 label에 전달 */
+}
+
+/* 선택 시 색상만 변경 */
+.gender-card:has(input:checked) {
+  border-color: #365cff;
+  background: rgba(54,92,255,.08);
+  color: #365cff;
+}
+
+
+
+
+/* 동의 영역 */
+.agreements{ display:grid; gap:6px; margin-top:6px; }
+.agreements label{ font-size:14px; font-weight:400; }
+
+/* 제출 버튼 */
+.btn-signup{
+  margin-top: 16px;
+  width: 100%; height: 50px;
+  border:0; border-radius:26px;
+  background:#365cff; color:#fff; font-size:16px; cursor:pointer;
+}
+
+/* 우측 이미지 영역 */
+.signup-right{
+  flex:1 1 auto;
+  display:flex; justify-content:center; align-items:flex-start;
+  position:relative; padding-top:16px;
+}
+.registercat{ position:relative; left:-20px; }       /* 살짝 왼쪽 */
+.registercat img{ width: 260px; height:auto; display:block; }  /* 더 작게 */
+
+/* 말풍선(작게, 둥근 꼬리) */
+.bubble{
+  position:absolute; top:-18px; right:-12px;
+  background:#fff; border:2px solid #000; border-radius:22px;
+  padding:8px 12px; font-size:14px; white-space:nowrap;
+}
+
+/* 성별: 가로 2개 동일 너비 */
+.signup-left .gender-select{
+  display:flex !important;
+  gap:12px;
+  flex-wrap:nowrap;
+}
+
+/* 카드: 중앙정렬 강제 */
+.signup-left .gender-card{
+  flex:1 1 0;                 /* 두 카드 동일 너비 */
+  height:56px;
+  display:flex !important;
+  align-items:center !important;    /* 세로 중앙 */
+  justify-content:center !important;/* 가로 중앙 */
+  padding:0 !important;
+  margin:0 !important;
+  border:2px solid #d0d0d0 !important;
+  border-radius:20px !important;
+  background:#fff !important;
+  color:#222 !important;
+  box-shadow:none !important;
+  position:relative;
+  box-sizing:border-box;
+}
+
+/* input은 자리 차지 X */
+.signup-left .gender-card input{
+  position:absolute; inset:0;
+  opacity:0; pointer-events:none;
+}
+
+/* 텍스트 정확히 중앙 */
+.signup-left .gender-card span{
+  display:inline-block;
+  line-height:1;
+  text-align:center;
+  margin:0;
+}
+
+/* 선택 시 색만 변경 */
+.signup-left .gender-card:has(input:checked){
+  border-color:#365cff !important;
+  background:rgba(54,92,255,.08) !important;
+  color:#365cff !important;
+  box-shadow:none !important;
+}
+
+

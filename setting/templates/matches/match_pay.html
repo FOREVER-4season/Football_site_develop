@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body style="background-color: #fafafa" xmlns="http://www.w3.org/1999/html">
+<header>
+    <div style="position: relative; max-width: 1100px; margin: 0 auto">
+        <img style="max-width: 1100px" src="/static/img/match_pay.png" alt="match_pay">
+        <div class="order_head">
+
+            <div class="d-flex">
+                <p>{{ stadiummatch_id.matchtime.start_time.strftime("%m월 %d일") }}</p>
+                <p id="day" style="margin-left: 5px"></p>
+            </div>
+
+            <div>
+                <p>
+                    {{ stadiummatch_id.matchtime.start_time.strftime("%H:%M") }}
+                    ~
+                    {{ stadiummatch_id.matchtime.end_time.strftime("%H:%M") }}</p>
+                </p>
+            </div>
+
+            <div class="d-flex">
+                <p>
+                    {{ stadiummatch_id.stadium.location }}
+                    {{ stadiummatch_id.stadium.name }}
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section style="max-width: 1100px; margin: 0 auto">
+    <div class="order_block">
+        <li>
+            <div><p class="main-font">내 쿠폰 </p></div>
+            <div><p>0개 보유</p></div>
+        </li>
+        <li>
+            <div><p>캐시/포인트</p></div>
+            <div>
+                <p id="cash"></p>
+                <p id="change"></p>
+            </div>
+        </li>
+
+    </div>
+
+
+    <div class="order_block">
+        <p class="main-font">결제</p>
+        <li><p>이용금액</p> <p>{{ stadiummatch_id.stadium.entry_fee}} </p></li>
+        <li><p >캐시 사용</p><p id="change1"></p></li>
+        <hr>
+        <li><p>추가 결제 금액</p><p id="addmoney"></p></li>
+
+    </div>
+
+
+    <div class="order_block">
+        현금영수증 div 만들기 그 여러개중 선택하는 섹션으로 만들기
+    </div>
+
+    <div class="order_block">
+        <div>이것만은 꼭!</div>
+        <hr>
+        <div>부상과 보험</div>
+        <hr>
+        <div>환불안내</div>
+        <hr>
+    </div>
+
+    <div class="order_block" >
+        <p>신청 전 상세 안내와 본 결제 페이지의 내용을 확인하였으면, 만 16세 이상 이용자 및 개인정보 제3자 제공에 동의합니다.</p>
+        <div id="pay_result">
+{#        <form action="{{ url_for('stadium.apply_match', match_id=stadiummatch_id.id) }}" method="post">#}
+{#                <button type="submit" class="btn btn-success w-100 mb-2"><span id="addmoney1"></span></button>#}
+{#        </form>#}
+        </div>
+    </div>
+</section>
+
+<script>
+    function getDayOfWeek(dateStr) {
+        // dateStr 예: '2025-10-05'
+        const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+        const date = new Date(dateStr);
+        return days[date.getDay()];
+        }
+
+    document.getElementById('day').innerText=getDayOfWeek({{ stadiummatch_id.matchtime.start_time.strftime("%Y-%m-%d") }})
+
+
+    if({{ g.user.money }}<{{ stadiummatch_id.stadium.entry_fee}}){
+        document.getElementById('cash').innerText= {{ g.user.money }} + "원 사용"
+        document.getElementById('change').innerText="잔액 "+ "0" +"원"
+        document.getElementById('change1').innerText="-"+ {{ g.user.money }} +"원"
+        document.getElementById('addmoney').innerText=({{ stadiummatch_id.stadium.entry_fee}}-{{ g.user.money }}) +"원"
+        document.getElementById('pay_result').innerHTML=`<a href="{{ url_for('money.view') }}"><button type="button" class="btn btn-success w-100 mb-2"><span id="addmoney1"></span></button></a>`
+        document.getElementById('addmoney1').innerText=({{ stadiummatch_id.stadium.entry_fee}}-{{ g.user.money }}) +"원 충전하기"}
+    else{
+        document.getElementById('cash').innerText= {{ stadiummatch_id.stadium.entry_fee }} + "원 사용"
+        document.getElementById('change').innerText="잔액 "+({{ g.user.money }}-{{ stadiummatch_id.stadium.entry_fee}}) +"원"
+        document.getElementById('change1').innerText="-"+ {{ stadiummatch_id.stadium.entry_fee }} +"원"
+        document.getElementById('addmoney').innerText="0" +"원"
+        document.getElementById('pay_result').innerHTML=`<form action="{{ url_for('stadium.apply_match', match_id=stadiummatch_id.id) }}" method="post">
+                <button type="submit" class="btn btn-success w-100 mb-2"><span id="addmoney1"></span></button>
+        </form>`
+        document.getElementById('addmoney1').innerText="신청하기"}
+
+
+
+</script>
+
+</body>
+</html>
+
+{#그럼 지금 나에게 필요한 정보는 매치 정보 가져와서 그걸 토대로 유저 정보 불러오고 경기장 정보 불러오고 해야겠네#}
+{#근데 중요한건 아직 유저매치 생기기 전이라는 사실#}
+{#그럼 장소매치 정보를 토대로 진행해#}
+
+{% endblock %}

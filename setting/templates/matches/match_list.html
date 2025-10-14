@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+
+    <!-- ✅ 캘린더 -->
+    <div class="mb-4">
+        <div id="inlineCalendar" style="max-width: 800px;"></div>
+        <div class="form-text mt-2 text-center">
+            날짜를 선택하면 해당 날짜의 내 신청 경기를 보여줍니다.
+        </div>
+    </div>
+
+    <!-- ✅ 내 신청 내역 -->
+    <div class="d-flex flex-column flex-grow-1">
+        <h2>내 신청 내역</h2>
+        {% if my_matches %}
+            {% for m in my_matches %}
+                <div class="mb-4 w-100">
+                    <div class="card h-100 p-3 shadow-sm">
+                        <div class="fw-bold">
+                            {{ m.stadium_match.matchtime.start_time.strftime("%m월 %d일 %H:%M") }}
+                        </div>
+                        <div>
+                            📍 {{ m.stadium_match.stadium.location }} - {{ m.stadium_match.stadium.name }}
+                        </div>
+                        <div>
+                            👥 정원: {{ m.stadium_match.stadium.headcount }}명 /
+                            현재 {{ m.stadium_match.user_matches|length }}명 신청
+                        </div>
+
+                        <!-- 상세보기 -->
+                        <a href="{{ url_for('matches.my_match_detail', usermatch_id=m.usermatch_id) }}"
+                           class="btn btn-primary mt-2">신청내역 보기</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center text-muted">
+                해당 날짜에 신청한 경기가 없습니다.<br>
+                다른 날짜를 선택해보세요.
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- ✅ Flatpickr 캘린더 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var today = new Date();
+        flatpickr("#inlineCalendar", {
+            inline: true,
+            dateFormat: "Y-m-d",
+            locale: "ko",
+            minDate: new Date(today.getFullYear(), today.getMonth() - 6, 1),
+            maxDate: new Date(today.getFullYear(), today.getMonth() + 7, 0),
+            defaultDate: "{{ selected_date }}",
+            onChange: function (selectedDates, dateStr, instance) {
+                if (dateStr) {
+                    window.location.href = "{{ url_for('matches.my_match_list', user_id=session['user_id']) }}?date=" + dateStr;
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

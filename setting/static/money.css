@@ -1,0 +1,43 @@
+.wallet-wrap{max-width:980px;margin:40px auto;text-align:center}
+.balance{margin:12px 0 24px;font-size:16px;font-weight:700; }
+
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media (max-width:820px){.panes{grid-template-columns:1fr}}
+
+.pane{
+  max-width:420px;
+  margin:0 auto;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.cat2{ width: 140px; object-fit: contain; margin: 0 auto; margin-top: 28px}
+.cat1{ width: 140px; object-fit: contain; margin: 0 auto;}
+.cattalk{display:inline-block;border:1px solid #000;border-radius:24px;padding:16px 22px;font-weight:700}
+.amount-box{display:flex;align-items:center;gap:8px;border:3px solid #000;border-radius:20px;padding:18px 20px;margin:28px 0}
+.amount-box input{flex:1;border:none;outline:none;font-size:24px;text-align:right}
+.agree{font-size:12px;margin:6px 0 18px;display:block}
+.btn-wrap{margin-top:auto}
+.btn-primary1{display:block;width:100%;padding:18px 0;font-size:28px;color:#fff;background:#9bbcdf;border:none;border-radius:16px;cursor:not-allowed}
+.btn-primary1:not(:disabled){background:#09f;cursor:pointer}
+
+/* 양쪽 패널 높이 동일하게 */
+.panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch; /* 높이 강제 같게 */
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.btn-wrap {
+  margin-top: auto; /* 버튼은 항상 맨 아래 */
+}

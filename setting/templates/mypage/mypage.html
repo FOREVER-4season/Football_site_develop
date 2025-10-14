@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4" style="max-width:1000px; margin: 0 auto">
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="profile-header">
+                <h2>{{ user.nickname }}</h2>
+                <a href="#" class="profile-btn">프로필 보기</a>
+            </div>
+            <p class="email">{{ user.email }}</p>
+            <p class="phone">{{ user.photo_number }}</p>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <span>매너</span>
+                <p>😊 좋아요</p>
+            </div>
+            <div class="status-item">
+                <span>레벨</span>
+                <p>🎖 루키</p>
+            </div>
+        </div>
+
+        <div class="balance">
+            <p>나의 캐시</p>
+            <h3>{{ '{:,}'.format((user.money | default(0)) | int) }}원</h3>
+            <a href="{{ url_for('money.view') }}" class="charge-btn">충전하기</a>
+        </div>
+
+        <div class="guide">
+            <p>플랩 가이드</p>
+            <strong>레벨 시스템을 소개합니다</strong>
+            <span class="level-circle">2</span>
+        </div>
+    </aside>
+
+    <main class="main">
+        <h2>나의 플랩</h2>
+        <ul class="menu">
+            <li class="ri-calendar-line">
+                <a href="{{ url_for('matches.my_match_list', user_id=g.user.user_id) }}">
+                    내 경기 내역 <small>총 {{ match_count | default(0) }}건</small>
+                </a>
+            </li>
+            <li class="ri-wallet-3-line">사용 내역</li>
+            <li class="ri-ticket-line">쿠폰</li>
+            <li class="ri-fire-line">챌린지</li>
+            <li class="ri-user-line">친구</li>
+            <li class="ri-robot-line">AI 리포트 모아보기 <span class="new">N</span></li>
+            <li class="ri-football-line">친구가 신청한 매치</li>
+            <li class="ri-heart-3-line">찜한 매치</li>
+            <li class="ri-user-add-line">
+                친구 초대 <small>친구 초대하면 나는 3,000원, 친구는 2,000원</small>
+            </li>
+            <li class="ri-notification-3-line">
+                <a href="{{ url_for('manager.add_stadium')}}">구장추가</a></li>
+            <li class="ri-edit-line"><a href="{{ url_for('manager.add_time')}}">시간추가</a></li>
+            <li class="ri-settings-3-line"><a href="{{ url_for('manager.add_stadiummatch')}}">경기추가</a></li>
+            <li class="ri-settings-3-line">
+                <a href="{{ url_for('auth.logout') }}">{{ g.user.username }} 로그아웃</a>
+            </li>
+        </ul>
+    </main>
+</div>
+{% endblock %}
+
