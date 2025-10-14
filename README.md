@@ -121,7 +121,7 @@
 
 <details>
   <summary>나의 정보를 입력하여 회원가입을 하거나 로그인 할 수 있습니다</summary>
-  
+  https://github.com/FOREVER-4season/Football_site_develop/issues/1#issue-3513775022
 
 </details>
 
