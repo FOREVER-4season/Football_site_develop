@@ -132,10 +132,7 @@
 <details>
   <summary>만들어 있는 경기를 신청할 수 있습니다.</summary>
   <br>
-  <video controls width="720">
-  <source src="readme_img/user_match.mp4" type="video/mp4">
-
-</video>
+  ![경기신청](https://github.com/user-attachments/assets/a15d249a-1935-40c1-b3d3-5e77adba0420)
 
 </details>
 
