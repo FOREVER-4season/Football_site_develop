@@ -132,10 +132,10 @@
 <details>
   <summary>만들어 있는 경기를 신청할 수 있습니다.</summary>
   <br>
-  ![경기신청](https://github.com/user-attachments/assets/a15d249a-1935-40c1-b3d3-5e77adba0420)
 
 </details>
 
+  ![경기신청](https://github.com/user-attachments/assets/a15d249a-1935-40c1-b3d3-5e77adba0420)
 ### 내 경기 내역  
 <details>
   <summary>예약 페이지에서는 나의 예약 정보를 ‘신청한 경기’와 ‘끝난 경기’로 구분하여 확인할 수 있습니다.  
