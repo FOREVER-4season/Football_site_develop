@@ -5,11 +5,12 @@
 ## 📑 목차
 - [❤️ 개요](#overview)
 - [👶 팀원 소개](#team)
-- [⚙️ 기술 스택 및 도구](#-기술-스택-및-도구)
-- [🧱 프로젝트 소개 PPT](#-프로젝트-소개-PPT)
-- [⚙️ 핵심 기능](#-핵심-기능)
-- [📸 주요기능 실행 영상](#-주요기능-실행-영상)
-- [📝 소감문](#-소감문)
+- [⚙️ 기술 스택 및 도구](#machine)
+- [⚙️ 다이어그램](#dirgram)
+- [🧱 프로젝트 소개 PPT](#introduce)
+- [⚙️ 핵심 기능](#hack)
+- [📸 주요기능 실행 영상](#move)
+<!--  - [📝 소감문](#theend)-->
 <br>
 <br>
 
@@ -73,7 +74,7 @@
 ---
 
 ## ⚙️ 기술 스택 및 도구
-
+<a id="machine"></a>
 | 영역 | 기술 스택 |
 | --- | --- |
 | Front-end | <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/> |
@@ -88,7 +89,7 @@
 ---
 
 ## ⚙️ 다이어그램
-
+<a id="dirgram"></a>
 <details><summary><b>Class Diagram</b></summary>
 <img src="readme_img/diagram1.png"/>
 </details>
@@ -104,7 +105,8 @@
 ---
 
 ## 🧱 프로젝트 소개 PPT
-<details><summary>PPT</summary>
+<a id="introduce"></a>
+<details><summary><b> PPT보기 </b></summary>
   
 | ![football_1](readme_img/football_1.png) | ![football_2](readme_img/football_2.png) |
 | :--: | :--: |
@@ -124,7 +126,7 @@
 ---
 
 ## ⚙️ 핵심 기능
-
+<a id="hack"></a>
 ### 👤 일반 회원
 - **로그인 / 회원가입** — 계정을 생성하고 개인화된 서비스를 이용  
 - **구장 정보 조회** — 등록된 풋살장 정보 및 예약 가능 일정 확인  
@@ -142,7 +144,7 @@
 ---
 
 ## 📸 주요기능 실행 영상
-
+<a id="move"></a>
 
 ### 회원가입/로그인
 
@@ -185,4 +187,4 @@
 ---
 
 <!-- ## 📝 소감문 -->
-
+<a id="theend"></a>
