@@ -14,17 +14,20 @@
 <br>
 <br>
 
----
 <a id="overview"></a>
+
+---
+
 ## ❤️ 개요
 - 프로젝트 목표 : 플라스크 파이썬 기반 다양한 API를 이용한 축구 구장 예약 중계 웹사이트 개발 프로젝트  
 - 개발 기간 : 25/9/23 ~ 25/10/12  
 
 <br>
 <br>
+<a id="team"></a>
 
 ---
-<a id="team"></a>
+
 ## 👶 팀원 소개
 
 <div align="center">
@@ -70,11 +73,12 @@
 </div>
 <br>
 <br>
+<a id="machine"></a>
 
 ---
 
 ## ⚙️ 기술 스택 및 도구
-<a id="machine"></a>
+
 | 영역 | 기술 스택 |
 | --- | --- |
 | Front-end | <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/> |
@@ -85,11 +89,12 @@
 
 <br>
 <br>
+<a id="dirgram"></a>
 
 ---
 
 ## ⚙️ 다이어그램
-<a id="dirgram"></a>
+
 <details><summary><b>Class Diagram</b></summary>
 <img src="readme_img/diagram1.png"/>
 </details>
@@ -101,11 +106,13 @@
 
 <br>
 <br>
+<a id="introduce"></a>
 
 ---
 
+
 ## 🧱 프로젝트 소개 PPT
-<a id="introduce"></a>
+
 <details><summary><b> PPT보기 </b></summary>
   
 | ![football_1](readme_img/football_1.png) | ![football_2](readme_img/football_2.png) |
@@ -122,11 +129,12 @@
 </details>  
 <br>
 <br>
+<a id="hack"></a>
 
 ---
 
 ## ⚙️ 핵심 기능
-<a id="hack"></a>
+
 ### 👤 일반 회원
 - **로그인 / 회원가입** — 계정을 생성하고 개인화된 서비스를 이용  
 - **구장 정보 조회** — 등록된 풋살장 정보 및 예약 가능 일정 확인  
@@ -140,11 +148,12 @@
 - **경기 일정 추가** — 풋살 경기 스케줄 생성 및 관리
 <br>
 <br>
+<a id="move"></a>
 
 ---
 
 ## 📸 주요기능 실행 영상
-<a id="move"></a>
+
 
 ### 회원가입/로그인
 
