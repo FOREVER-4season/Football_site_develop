@@ -3,8 +3,8 @@
 <br>
 
 ## 📑 목차
-- [❤️ 개요](#-개요)
-- [👶 팀원 소개](#-팀원-소개)
+- [❤️ 개요](#overview)
+- [👶 팀원 소개](#team)
 - [⚙️ 기술 스택 및 도구](#-기술-스택-및-도구)
 - [🧱 프로젝트 소개 PPT](#-프로젝트-소개-PPT)
 - [⚙️ 핵심 기능](#-핵심-기능)
@@ -14,7 +14,7 @@
 <br>
 
 ---
-
+<a id="overview"></a>
 ## ❤️ 개요
 - 프로젝트 목표 : 플라스크 파이썬 기반 다양한 API를 이용한 축구 구장 예약 중계 웹사이트 개발 프로젝트  
 - 개발 기간 : 25/9/23 ~ 25/10/12  
@@ -23,7 +23,7 @@
 <br>
 
 ---
-
+<a id="team"></a>
 ## 👶 팀원 소개
 
 <div align="center">
@@ -106,18 +106,17 @@
 ## 🧱 프로젝트 소개 PPT
 <details><summary>PPT</summary>
   
-<img src="readme_img/football1.png"/>
-<img src="readme_img/football2.png"/>
-<img src="readme_img/football3.png"/>
-<img src="readme_img/football4.png"/>
-<img src="readme_img/football5.png"/>
-<img src="readme_img/football6.png"/>
-<img src="readme_img/football7.png"/>
-<img src="readme_img/football8.png"/>
-<img src="readme_img/football9.png"/>
-<img src="readme_img/football10.png"/>
-
-
+| ![football_1](readme_img/football_1.png) | ![football_2](readme_img/football_2.png) |
+| :--: | :--: |
+| ![football_3](readme_img/football_3.png) | ![football_4](readme_img/football_4.png) |
+| ![football_5](readme_img/football_5.png) | ![football_6](readme_img/football_6.png) |
+| ![football_7](readme_img/football_7.png) | ![football_8](readme_img/football_8.png) |
+| ![football_9](readme_img/football_9.png) | ![football_10](readme_img/football_10.png) |
+| ![football_3](readme_img/football_11.png) | ![football_4](readme_img/football_12.png) |
+| ![football_5](readme_img/football_13.png) | ![football_6](readme_img/football_14.png) |
+| ![football_7](readme_img/football_15.png) | ![football_8](readme_img/football_16.png) |
+| ![football_9](readme_img/football_17.png) | ![football_10](readme_img/football_18.png) |
+| ![football_9](readme_img/football_19.png) | ![football_10](readme_img/football_20.png) |
 </details>  
 <br>
 <br>
