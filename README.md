@@ -105,6 +105,17 @@
 
 ## 🧱 프로젝트 소개 PPT
 <details><summary>PPT</summary>
+  
+<img src="readme_img/football1.png"/>
+<img src="readme_img/football2.png"/>
+<img src="readme_img/football3.png"/>
+<img src="readme_img/football4.png"/>
+<img src="readme_img/football5.png"/>
+<img src="readme_img/football6.png"/>
+<img src="readme_img/football7.png"/>
+<img src="readme_img/football8.png"/>
+<img src="readme_img/football9.png"/>
+<img src="readme_img/football10.png"/>
 
 
 </details>  
