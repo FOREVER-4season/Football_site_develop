@@ -53,7 +53,6 @@ class StadiumMatch(db.Model):
 class UserMatch(db.Model):
     __tablename__    = "usermatch"
     usermatch_id     = db.Column(db.Integer, primary_key=True)
-
     user_id          = db.Column(db.Integer, db.ForeignKey("user.user_id", ondelete="CASCADE"), nullable=False)
     stadium_match_id = db.Column(db.Integer, db.ForeignKey("stadium_match.id", ondelete="CASCADE"), nullable=False)
 
@@ -65,10 +64,10 @@ class UserMatch(db.Model):
 class Manager(db.Model):
     __tablename__   = "manager"
     manager_id      = db.Column(db.Integer, primary_key=True)
-    password        = db.Column(db.String(20), nullable=False)
-    email           = db.Column(db.String(200), nullable=False)
     nickname        = db.Column(db.String(10), nullable=False)
-    number          = db.Column(db.String(15))
+    password        = db.Column(db.String(20), nullable=False)
+    p_number        = db.Column(db.String(15), nullable=False)
+    pay             = db.Column(db.Integer, nullable=True, default=0)
 
     stadium_match   = db.relationship("StadiumMatch", back_populates="manager")
 

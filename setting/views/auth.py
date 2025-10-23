@@ -8,6 +8,7 @@ from setting import db
 from setting.forms import UserCreateForm, UserLoginForm
 from setting.models import User
 
+#회원가입 라우트
 @bp.route('/signup/', methods=['GET', 'POST'])
 def signup():
     form = UserCreateForm()
@@ -32,7 +33,7 @@ def signup():
     return render_template('auth/register.html', form=form)
 
 
-
+#로그인 라우트
 @bp.route('/login/', methods=['GET', 'POST'])
 def login():
     form=UserLoginForm()
@@ -55,7 +56,7 @@ def login():
 
     return render_template('auth/login.html',form=form)
 
-
+#유저제한 함수
 @bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
@@ -64,7 +65,7 @@ def load_logged_in_user():
     else:
         g.user = User.query.get(int(user_id))
 
-
+#로그아웃 함수
 @bp.route('logout/')
 def logout():
     session.clear()

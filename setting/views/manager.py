@@ -1,14 +1,15 @@
-from flask import Blueprint, render_template, redirect,  url_for, flash,request,session,g
-from werkzeug.security import generate_password_hash, check_password_hash
-import functools
 from datetime import datetime, timedelta
+
+from flask import Blueprint, render_template, redirect, url_for, flash, request, session
+from werkzeug.security import check_password_hash
+
+from setting import db
+from setting.forms import StadiumForm, TimeForm, StadiumMatchForm, M_loginForm
+from setting.models import Stadium, MatchTime, StadiumMatch, Manager
 
 bp=Blueprint('manager',__name__,url_prefix='/manager')
 
-from setting import db
-from setting.forms import StadiumForm, TimeForm, StadiumMatchForm
-from setting.models import Stadium, MatchTime, StadiumMatch
-
+#구장추가 라우트
 @bp.route('/stadium', methods=['GET', 'POST'])
 def add_stadium():
     form = StadiumForm()
@@ -32,7 +33,7 @@ def add_stadium():
         return render_template('manager/m_stadium.html', form=form)
     return render_template('manager/m_stadium.html', form=form)
 
-
+#시간추가 라우트
 @bp.route('/time', methods=['GET', 'POST'])
 def add_time():
     form = TimeForm()
@@ -61,7 +62,7 @@ def add_time():
         return render_template('manager/m_time.html', form=form)
     return render_template('manager/m_time.html', form=form)
 
-
+#경기추가 라우트
 @bp.route('/stadium_match/add', methods=['GET', 'POST'])
 def add_stadiummatch():
     form = StadiumMatchForm()
@@ -81,3 +82,27 @@ def add_stadiummatch():
         return redirect(url_for('manager.add_stadiummatch'))
 
     return render_template('manager/m_stadiummatch.html', form=form)
+
+
+#매니저 로그인
+@bp.route('/login/', methods=['GET', 'POST'])
+def m_login():
+    form = M_loginForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        errormsg = None
+        user = Manager.query.filter_by(nickname=form.username.data).first()
+        if not user:
+            errormsg = '존재하지 않는 사용자입니다.'
+        elif not check_password_hash(user.password, form.password.data):
+            errormsg = '비밀번호가 올바르지 않습니다.'
+        if errormsg is None:
+            session.clear()
+            session['user_id'] = user.user_id
+            _next = request.args.get('next', '')
+            if _next:
+                return redirect(_next)
+            else:
+                return redirect(url_for('main.index'))
+        flash(errormsg)
+
+    return render_template('manager/m_login.html', form=form)

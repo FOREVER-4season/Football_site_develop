@@ -49,3 +49,8 @@ class StadiumMatchForm(FlaskForm):
     stadium_id = SelectField("경기장 선택", coerce=int, validators=[DataRequired()])
     matchtime_id = SelectField("경기 시간 선택", coerce=int, validators=[DataRequired()])
     pay = IntegerField("결제 금액", validators=[DataRequired(), NumberRange(min=0)])
+
+
+class M_loginForm(FlaskForm):
+    username = StringField('사용자이름', validators=[DataRequired(message="아이디를 정확히 입력해주세요"), Length(min=1, max=25)])
+    password = PasswordField('비밀번호', validators=[DataRequired(message="비밀번호를 정확히 입력해주세요")])

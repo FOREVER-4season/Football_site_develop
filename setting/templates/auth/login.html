@@ -32,8 +32,10 @@
           {% set errors = form.password.errors %}
           {% include 'form_errors.html' %}
       </div>
-
+        <div class="b-dis">
       <button type="submit" class="btn-login">로그인</button>
+        <a href="{{url_for('manager.m_login')}}"><button type="button" class="btn-login1">매니저 로그인</button></a>
+        </div>
     </form>
   </div>
 
