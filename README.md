@@ -36,7 +36,8 @@
   <tr>
     <!-- spring -->
     <td align="center" width="230" style="vertical-align: top;">
-      <img src="setting/static/img/hi1.jpg" width="120" height="150" alt="spring"><br><br>
+      <br>
+      <img src="setting/static/img/hi1.jpg" style="width:120px; height:150px;"  alt="spring"><br><br>
       <b>박혜영 (spring)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
       <sub><b>Frontend / Backend</b></sub><br>
@@ -44,27 +45,30 @@
       <a href="https://github.com/gangazigood"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
-      <img src="setting/static/img/hi2.jpg" width="120" height="150" alt="summer"><br><br>
+      <br>
+      <img src="setting/static/img/hi2.jpg" style="width:120px; height:150px;" alt="summer"><br><br>
       <b>백기림 (summer)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
       <sub><b>Frontend / Backend</b></sub><br>
-      <sub>DB구현<br>총괄</sub><br><br>
+      <sub>DB구현<br>총괄 및 오류개선</sub><br><br>
       <a href="https://github.com/girintr"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
-      <img src="setting/static/img/hi3.jpg" width="120" height="150" alt="autumn"><br><br>
+      <br>
+      <img src="setting/static/img/hi3.jpg" style="width:120px; height:150px;" alt="autumn"><br><br>
       <b>이윤서 (autumn)</b>
       <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
       <sub><b>Frontend / Backend</b></sub><br>
-      <sub>hreder/footer등 base.html구현<br>매니저 페이지 구현현</sub><br><br>
+      <sub>hreder/footer등 base.html구현<br>매니저 페이지 구현</sub><br><br>
       <a href="https://github.com/yoo05-seo"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
     <td align="center" width="230" style="vertical-align: top;">
-      <img src="setting/static/img/hi4.jpg" width="120" height="150px" alt="winter"><br><br>
+      <br>
+      <img src="setting/static/img/hi4.jpg" style="width:120px; height:150px;" alt="winter"><br><br>
       <b>박종훈 (winter)</b>
-      <div style="width:60%;margin:6px auto;border-bottom:1px solid #aaa;"></div>
+      <div style="width:60%; margin:6px auto;border-bottom:1px solid #aaa;"></div>
       <sub><b>Frontend / Backend</b></sub><br>
-      <sub>Matches페이지 구현<>Flatpickr 달력 기반 경기 조회<br>stadium 페이지 구현br</sub><br><br>
+      <sub>Matches,stadium 페이지 구현<br>Flatpickr 달력 기반 경기 조회</sub><br><br>
       <a href="https://github.com/dailyhune"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"></a>
     </td>
   </tr>
