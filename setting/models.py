@@ -1,7 +1,5 @@
 from setting import db
 
-
-
 # User 모델
 class User(db.Model):
     __tablename__ = "user"
