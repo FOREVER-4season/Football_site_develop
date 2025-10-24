@@ -2,4 +2,8 @@
 .venv/
 __pycache__/
 football.db
+<<<<<<< HEAD
 migrations
+=======
+migrations
+>>>>>>> d414b8e654cccff330a26a182d398972ade7126f
