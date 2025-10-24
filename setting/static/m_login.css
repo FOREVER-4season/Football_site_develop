@@ -1,9 +1,3 @@
-.login_wrap {
-    width: 460px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
 .menu_wrap {
     display: table;
     table-layout: fixed;
@@ -44,6 +38,13 @@
     padding: 24px;
 }
 
+
+.login_wrap {
+    width: 460px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
 .login_form {
     position: relative;
 }
@@ -66,11 +67,10 @@
     border-radius: 8px 8px 0 0;
 }
 
-.input_item.id.on,
-.input_item.id.focus {
-    border-color: #09aa5c; /* 활성화되고 포커스된 상태에서 테두리 색상 예시 */
-    box-shadow: 0 0 5px rgba(9, 170, 92, 0.6); /* 강조 효과 */
-    outline: none;
+.input_item.pw {
+    height: 59px;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
 }
 
 /* 포커스 상태에 대한 추가 스타일 */
@@ -81,15 +81,12 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    border: 2px solid #09aa5c;
-    border-radius: 8px 8px 0 0;
     z-index: 10;
 }
 
-.input_item.pw {
-    height: 59px;
-    border-top: 0;
-    border-radius: 0 0 8px 8px;
+.input_id, .input_pw {
+    border: none;
+    outline: none; /* 포커스 시 생기는 테두리 제거 */
 }
 
 .input_id, .input_pw {
@@ -120,7 +117,20 @@
     box-sizing: border-box;
     z-index: 5;
 }
+/* input이 focus되거나 on 상태일 때 */
+.input_item.focus .text_label,
+.input_item.on .text_label {
+    left: 7px;
+    bottom: 30px;
+    font-size: 12px;
+    padding: 0 8px;
+    letter-spacing: -.8px;
+    white-space: nowrap;
+    width: auto;
+}
 
+
+/*로그인상태유지 css*/
 .login_keep_wrap {
     position: relative;
     margin-top: 12px;
@@ -162,6 +172,7 @@
     color: #767678;
 }
 
+/*로그인 버튼 css*/
 .btn_login_wrap {
     margin-top: 20px;
 }
@@ -172,7 +183,7 @@
     width: 100%;
     padding: 13px 20px;
     border-radius: 8px;
-    background-color: #09aa5c;
+    background-color: #365cff;
     box-sizing: border-box;
     color: #fff;
     font-size: 16px;
@@ -193,8 +204,4 @@
     line-height: 24px;
     letter-spacing: -.4px;
     color: inherit;
-}
-.input_id, .input_pw {
-    border: none;
-    outline: none; /* 포커스 시 생기는 테두리 제거 */
 }
